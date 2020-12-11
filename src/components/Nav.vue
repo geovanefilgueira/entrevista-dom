@@ -60,5 +60,6 @@ nav>img{width: 10%;}
   nav>a{
     width: 90%;
   }
+  nav>img{width: 30%;}
 }
 </style>

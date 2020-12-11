@@ -1,7 +1,7 @@
 
 <template>
   <div id="app">
-    <Nav msg="Welcome to Your Vue.js App"/>
+    <Nav/>
     <Header/>
     <Footer/>
   </div>
@@ -26,13 +26,21 @@ export default {//state,data,e metodos aqui
 *{
   margin: 0;
   padding: 0;
+  color: #5e5e5e;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  
 }
+/* ====== CLASSES GLOBAIS======*/ 
+.flex-row{display: flex; flex-direction: row; justify-content:space-between;}
+.flex-column{display: flex; flex-direction: column; justify-content:space-between;}
+.w90{width: 90%;}
+.w30{width: 30%;}
+.b12{background: orange;}
+h1,h2,h3,h4,h5,h6{padding: 10px 0;}
+input[type="text"],select{border: 0; height: 5vh; border-radius: 5px;}
+button{cursor: pointer; min-width: 40px; padding: 0 10px; border: 0; height: 5vh; border-radius: 40px; background:#08A7B0; color: #fff; font-size: 0.8; font-weight: 700;}
+button:hover{background: darkcyan;}
 </style>
