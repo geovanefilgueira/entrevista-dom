@@ -52,6 +52,7 @@ nav>a:hover{
   background: #318d92;
   color: #000000
 }
+nav>img{width: 10%;}
 @media only screen and (max-width: 600px) {
   nav {
     flex-direction: column;
