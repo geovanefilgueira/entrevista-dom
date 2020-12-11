@@ -6,7 +6,7 @@
         </div>
         
         <div class="container-main">
-            <div class="container-info">
+            <div class="container-info animate__animated animate__fadeInLeft">
                 <img src="../assets/notebook.svg" alt="desenho de um notebook">
             </div>
             <div class="container-cards cell-w100">
@@ -27,26 +27,16 @@
                         </div>
                         <div class="flex-column w30">
                             <label>Enviar</label>
-                            <button>Salvar Feedback</button>
+                            <button v-on:click="adicionar">Salvar Feedback</button>
                         </div>
                         
                     </div>
                 </div>
-
-                <div class="container-card"> <!-- PODE SE TRANSFORMAR O CARD EM UM COMPONENTE E PASSAR DADOS VIA PROPS -->
-                    <div class="w90">
-                        <div class="flex-row">
-                            <div>
-                                <label>Empresa: </label>
-                                <strong>Multiseg</strong>
-                            </div>
-                            <label>Data: 11-12-2020</label>
-                        </div>
-                        <label>
-                            Suporte e desenvolvimento muito eficiente, atendente sempre muito cortez e educado, espero que continuem assim. excelentes
-                        </label>
-                    </div>
+                <div v-for="cards in comentarios" :key="cards.id">
+                    <Cards :comentarios="cards"/>
                 </div>
+                
+                
 
             </div>
         </div>
@@ -54,8 +44,69 @@
 </template>
 
 <script>
+import Cards from './cards'
+
 export default {
-    
+    components: {//components que vai usar
+        Cards
+    },
+    data(){
+        return{
+           comentarios:[
+                {   
+                    id:'0',
+                    empresa:'Multiseg',
+                    comentario:'atendente sempre muito cortez e educado, espero que continuem assim. excelentes',
+                    data:'10-12-2020'
+                },
+                {   
+                    id:'1',
+                    empresa:'BHR Seguros',
+                    comentario:'Suporte e desenvolvimento muito eficiente, atendente sempre muito cortez e educado, espero que continuem assim. excelentes',
+                    data:'11-12-2020'
+                }
+                ,
+                {   
+                    id:'2',
+                    empresa:'TLG Consultoria',
+                    comentario:'espero que continuem assim. excelentes',
+                    data:'11-12-2020'
+                },
+                {   
+                    id:'3',
+                    empresa:'TLG Consultoria',
+                    comentario:'Bom, Excelente',
+                    data:'11-12-2020'
+                },
+                {   
+                    id:'4',
+                    empresa:'TLG Consultoria',
+                    comentario:'maria falou um palatrao',
+                    data:'11-12-2020'
+                }
+
+            ]
+            
+        }
+    }
+    ,
+    props:{
+        dados: Array
+    },
+     methods: {
+        adicionar: ()=>{
+            this.comentarios.push(
+                {
+                    id:'8',
+                    empresa:'aaa',
+                    comentario:'atendente sempre muito cortez e educado, espero que continuem assim. excelentes',
+                    data:'10-12-2020'
+                }
+            ).then(
+                console.log("salvo")
+            )
+        }
+     }
 }
 </script>
 
@@ -79,7 +130,7 @@ header{
     }
 .container-cards,.container-info{
     width: 49%;
-    height: 80vh;
+    min-height: 80vh;
 }
 .container-info>img{
     width: 100%;
@@ -90,19 +141,7 @@ header{
     min-height: 10vh;
     background: #e9e9e9;
 }
-.container-card{
-    width: 100%;
-    height: 10vh;
-    background: #FFFFFF;
-    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.25);
-    margin: 10px 0;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.8em;
-    color: #6b6b6b;
-}
+
 
 @media only screen and (max-width: 600px) {
   .container-info{display: none;}
