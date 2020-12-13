@@ -1,11 +1,10 @@
 <template>
   <nav>
-    <img alt="logo don advice, cavalo de xadrez" src="../assets/logo-don.png">
-    <a href="">Home</a>
-    <a href="">Sobre</a>
-    <a href="">Produtos</a>
-    <a href="">Home</a>
-    <a href="">Home</a>
+    <img alt="logo don advice, cavalo de xadrez" src="../../assets/logo-don.png">
+    <router-link to="/">Header</router-link>
+    <router-link to="/sobre">Sobre</router-link>
+    <router-link to="/login">Login</router-link>
+   
   </nav>
 </template>
 

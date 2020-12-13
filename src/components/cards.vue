@@ -9,7 +9,7 @@
                 <label>{{comentarios.data}}</label>
             </div>
             <label>
-                <label v-if="comentarios.comentario.includes('palatrao')">Ops: Comentario improprio</label>
+                <label v-if="comentarios.comentario.includes('palavrao')">Ops: Comentario Bloqueado v-if</label>
                 <label v-else>{{comentarios.comentario}}</label>
                 
             </label>

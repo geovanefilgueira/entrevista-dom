@@ -1,5 +1,6 @@
 <template>
     <header>
+        <Nav/>
         <div class="w90">
             <h1 class="w90">Feedback Systens Web  -Don Ad</h1>
             <label>Loren ipsun is a tipograpyc of desingner the word</label>
@@ -7,7 +8,7 @@
         
         <div class="container-main">
             <div class="container-info animate__animated animate__fadeInLeft">
-                <img src="../assets/notebook.svg" alt="desenho de um notebook">
+                <img src="../../assets/notebook.svg" alt="desenho de um notebook">
             </div>
             <div class="container-cards cell-w100">
                 <div class="menu-cards">
@@ -35,20 +36,24 @@
                 <div v-for="cards in comentarios" :key="cards.id">
                     <Cards :comentarios="cards"/>
                 </div>
-                
-                
-
             </div>
         </div>
+        <Footer/>
     </header>
 </template>
 
 <script>
-import Cards from './cards'
+
+import Cards from '../cards.vue'
+import Nav from '../parts-layout/Nav.vue'
+import Footer from '../parts-layout/Footer.vue'
 
 export default {
     components: {//components que vai usar
-        Cards
+        Cards,
+        Nav,
+        Footer
+        
     },
     data(){
         return{
@@ -66,12 +71,7 @@ export default {
                     data:'11-12-2020'
                 }
                 ,
-                {   
-                    id:'2',
-                    empresa:'TLG Consultoria',
-                    comentario:'espero que continuem assim. excelentes',
-                    data:'11-12-2020'
-                },
+                
                 {   
                     id:'3',
                     empresa:'TLG Consultoria',
@@ -81,7 +81,7 @@ export default {
                 {   
                     id:'4',
                     empresa:'TLG Consultoria',
-                    comentario:'maria falou um palatrao',
+                    comentario:'maria falou um palavrao',
                     data:'11-12-2020'
                 }
 
@@ -90,21 +90,20 @@ export default {
         }
     }
     ,
-    props:{
-        dados: Array
-    },
      methods: {
         adicionar: ()=>{
-            this.comentarios.push(
-                {
-                    id:'8',
-                    empresa:'aaa',
-                    comentario:'atendente sempre muito cortez e educado, espero que continuem assim. excelentes',
-                    data:'10-12-2020'
-                }
-            ).then(
-                console.log("salvo")
-            )
+            alert("Ops, em construção, add todoist, remover, router, private router")
+            
+            // this.comentarios.push(
+            //     {
+            //         id:'8',
+            //         empresa:'aaa',
+            //         comentario:'atendente sempre muito cortez e educado, espero que continuem assim. excelentes',
+            //         data:'10-12-2020'
+            //     }
+            // ).then(
+            //     console.log("salvo")
+            // )
         }
      }
 }
@@ -113,7 +112,7 @@ export default {
 <style scoped>
 header{
     width: 100%;
-    min-height: 90vh;
+    min-height: 75vh;
     background: #eeeeee;
     display: flex;
     flex-direction: column;
@@ -122,7 +121,7 @@ header{
 }
 .container-main{
     width: 90%;
-    height: 90vh;
+    height:80vh;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -130,7 +129,7 @@ header{
     }
 .container-cards,.container-info{
     width: 49%;
-    min-height: 80vh;
+    min-height: 65vh;
 }
 .container-info>img{
     width: 100%;
