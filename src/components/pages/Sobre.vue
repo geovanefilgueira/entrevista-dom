@@ -27,7 +27,7 @@ export default {
 <style scoped>
 .sobre{
     width: 100%;
-    height: 105vh;
+    min-height: 105vh;
     background: #ffffff;
     display: flex;
     flex-direction: column;
@@ -36,7 +36,7 @@ export default {
     }
 .card-sobre{ 
     width: 80%; 
-    height: 40vh; 
+    min-height: 40vh; 
     display: flex;
     justify-content: center;
     align-items: center;
