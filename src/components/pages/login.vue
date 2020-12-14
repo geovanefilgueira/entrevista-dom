@@ -5,7 +5,10 @@
             <div class="flex-row">
                 <div class="box-login">
                     <h1>Login</h1>
+                    
                     <form class="" @submit.prevent>
+                        <label class="w90">Login local, rota painel publica...</label>
+                        <label class="w90">User: geovane pass: 123</label>
                         <strong class="w90">Usuario:</strong>
                         <input type="text" v-model="usuario" class="w90" required>
                        

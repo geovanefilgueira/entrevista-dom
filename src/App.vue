@@ -23,11 +23,13 @@ export default {
 .flex-row{display: flex; flex-direction: row; justify-content:space-between;}
 .flex-column{display: flex; flex-direction: column; justify-content:space-between;}
 .w90{width: 90%;}
+.w100{width: 100%;}
 .w30{width: 30%;}
 .w50{width: 50%;}
 .b12{background: orange;}
+.b1{background: cornflowerblue;}
 h1,h2,h3,h4,h5,h6{padding: 10px 0;}
-input[type="text"],select{border: 0; height: 5vh; border-radius: 5px;}
+input[type="text"],select{border: 0; height: 5vh; border-radius: 5px; border: 1px solid #c7c7c7;}
 button{cursor: pointer; min-width: 40px; padding: 0 10px; border: 0; height: 5vh; border-radius: 40px; background:#08A7B0; color: #fff; font-size: 0.8; font-weight: 700;}
 button:hover{background: darkcyan;}
 </style>

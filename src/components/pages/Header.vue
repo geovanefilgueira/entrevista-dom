@@ -29,7 +29,7 @@
 
 <script>
 
-import Cards from '../cards.vue'
+import Cards from '../Cards'
 import Nav from '../parts-layout/Nav.vue'
 import Footer from '../parts-layout/Footer.vue'
 
@@ -74,23 +74,7 @@ export default {
             
         }
     }
-    ,
-     methods: {
-        adicionar: ()=>{
-            alert("Ops, em construção, add todoist, remover, router, private router")
-            
-            // this.comentarios.push(
-            //     {
-            //         id:'8',
-            //         empresa:'aaa',
-            //         comentario:'atendente sempre muito cortez e educado, espero que continuem assim. excelentes',
-            //         data:'10-12-2020'
-            //     }
-            // ).then(
-            //     console.log("salvo")
-            // )
-        }
-     }
+    
 }
 </script>
 
