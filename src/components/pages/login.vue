@@ -5,20 +5,22 @@
             <div class="flex-row">
                 <div class="box-login">
                     <h1>Login</h1>
-                    <form class="">
+                    <form class="" @submit.prevent>
                         <strong class="w90">Usuario:</strong>
-                        <input type="text" class="w90" required>
+                        <input type="text" v-model="usuario" class="w90" required>
+                       
                         <strong class="w90"> Senha:</strong>
-                        <input type="text" class="w90" required>
+                        <input type="text" v-model="senha" class="w90" required>
                         <div class="w90">
                             <input type="checkbox" required>
                             <label>Aceito os termos de uso</label>
                         </div>
-                        <input type="submit" class="w90 b12" value="Entrar">
+                        <input type="submit" class="w90 b12" value="Entrar" v-on:click="loginIsTrue" >
                     </form>
                 </div>
                 <div class="box-login"> 
                    <img src="../../assets/logo-don.png" alt="logo da empresa">
+                    usuario é {{usuario}} e a senha é {{senha}}
                 </div>
             </div>
             
@@ -36,6 +38,24 @@ export default {
     components:{
         Nav,
         Footer
+    },
+    
+    data(){
+        return{
+            usuario:"",
+            senha: ""
+                
+        }
+    },
+    methods:{
+        loginIsTrue:function(){
+            if(this.usuario==="geovane" && this.senha==="123"){
+                this.$router.push("/painel")
+            }
+            else{
+                alert("senha e/ou usuario incorretos")
+            }
+        }
     }
 }
 </script>
