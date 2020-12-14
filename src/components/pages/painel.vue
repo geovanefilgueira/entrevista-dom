@@ -25,7 +25,7 @@
                 </div>
                 <div class="w90 box-cadastrados">
                         <h1 class="w90">Cadastrados</h1>
-                        <label class="w90"> recuperar data de arquivo local, e dar push no arry com novos itens, construir de manha cedo ==========NÃO ESQUECER=========</label> 
+                        <label class="w90"> recuperar data de arquivo local, e dar push no arry com novos itens, construir de manha cedo </label> 
                 </div>
             </div>
             <div class="w50 painel-container">

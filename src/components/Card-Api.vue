@@ -5,10 +5,12 @@
                 <div>
                     <h3>Nome: {{this.pokemons.name}} </h3>
                 </div>
-                <label>Mais Opções:</label>
+                <router-link to="/details">
+                    Mais Detalhes:
+                </router-link>
 
             </div>
-            <label>
+            <label >
                 {{this.pokemons.url}}
             </label>
         </div>
