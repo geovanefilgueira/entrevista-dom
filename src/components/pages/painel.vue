@@ -23,27 +23,25 @@
                         <button >Salvar Feedback</button>
                     </div>
                 </div>
-
                 <div class="w90 box-cadastrados">
                         <h1 class="w90">Cadastrados</h1>
-                        <label class="w90"> recuperar data de arquivo local, e dar push no arry com novos itens</label> 
+                        <label class="w90"> recuperar data de arquivo local, e dar push no arry com novos itens, construir de manha cedo ==========NÃO ESQUECER=========</label> 
                 </div>
-                
             </div>
             <div class="w50 painel-container">
-                <div class="box-info-api">
-                    <h1 class="w90">Consumindo uma api</h1>
-                     Consumindo uma api externa qualquer
-                </div>
-                <div class="box-listagem-api">
-                    <div v-for="(poke,index) in pokemons" :key="index" class="w90">
-                        <CardPokem :pokemons="poke"/>
+                <div class="w90">
+                    <div class="box-info-api">
+                        <h1 class="w90">Consumindo uma api</h1>
+                        Consumindo uma api externa qualquer
+                    </div>
+                    <div class="box-listagem-api">
+                        <div v-for="(poke,index) in pokemons" :key="index" class="w90">
+                            <CardPokem :pokemons="poke"/>
+                        </div>
                     </div>
                 </div>
-                
             </div>
         </div>
-        
         <Footer/>
     </div>
 </template>
@@ -104,6 +102,7 @@ export default {
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
+    overflow:auto; 
 }
 .box-info-api{
     width: 100%;
@@ -115,5 +114,8 @@ export default {
     height: 75vh;
     overflow:auto; 
 }
-
+@media only screen and (max-width: 600px) {
+  .painel{flex-direction: column;}
+  .painel-container{width: 100%;}
+}
 </style>

@@ -21,7 +21,7 @@
                         <input type="submit" class="w90 b12" value="Entrar" v-on:click="loginIsTrue" >
                     </form>
                 </div>
-                <div class="box-login"> 
+                <div class="box-login box-login-logo"> 
                    <img src="../../assets/logo-don.png" alt="logo da empresa">
                     usuario é {{usuario}} e a senha é {{senha}}
                 </div>
@@ -100,5 +100,10 @@ export default {
         font-weight: 900;
         color: #fff;
         cursor: pointer;
+    }
+    @media only screen and (max-width: 600px) {
+        .box-login-logo{display: none;}
+        .login-card{width: 80%;}
+        .box-login{width: 90%;}
     }
 </style>
