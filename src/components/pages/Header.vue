@@ -32,6 +32,7 @@
 import Cards from '../Cards'
 import Nav from '../parts-layout/Nav.vue'
 import Footer from '../parts-layout/Footer.vue'
+import DbData from '../../assets/db/databaselocal.js'
 
 export default {
     components: {//components que vai usar
@@ -42,37 +43,11 @@ export default {
     },
     data(){
         return{
-           comentarios:[
-                {   
-                    id:'0',
-                    empresa:'Multiseg',
-                    comentario:'atendente sempre muito cortez e educado, espero que continuem assim. excelentes',
-                    data:'10-12-2020'
-                },
-                {   
-                    id:'1',
-                    empresa:'BHR Seguros',
-                    comentario:'Suporte e desenvolvimento muito eficiente, atendente sempre muito cortez e educado, espero que continuem assim. excelentes',
-                    data:'11-12-2020'
-                }
-                ,
-                
-                {   
-                    id:'3',
-                    empresa:'TLG Consultoria',
-                    comentario:'Bom, Excelente',
-                    data:'11-12-2020'
-                },
-                {   
-                    id:'4',
-                    empresa:'TLG Consultoria',
-                    comentario:'maria falou um palavrao',
-                    data:'11-12-2020'
-                }
-
-            ]
-            
+          comentarios:DbData
         }
+    },
+    created: function(){
+        console.log(DbData)
     }
     
 }
@@ -90,15 +65,20 @@ header{
 }
 .container-main{
     width: 90%;
-    height:80vh;
+    min-height:80vh;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     }
-.container-cards,.container-info{
+.container-info{
     width: 49%;
     min-height: 65vh;
+}
+.container-cards{
+     width: 49%;
+     height: 65vh;
+    overflow:auto; 
 }
 .container-info>img{
     width: 100%;

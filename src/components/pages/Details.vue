@@ -4,7 +4,7 @@
          <h1>
              DETALHES DO POKEMON
          </h1>
-         <label>criar rota com params,pegar via url, </label>
+         <label>criar rota com params,pegar via url</label>
     </div>
    
 </template>

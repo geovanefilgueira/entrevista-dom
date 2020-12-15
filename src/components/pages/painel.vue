@@ -16,16 +16,20 @@
                     </div>
                     <div class="flex-column w90">
                         <label>Comentario:</label>
-                        <input type="text">
+                        <input type="text" v-model="comentario">
+                        {{comentario}}
                     </div>
                     <div class="flex-column w90">
                         <label>Enviar</label>
-                        <button >Salvar Feedback</button>
+                        <button v-on:click="salvarnodb">Salvar Feedback</button>
                     </div>
                 </div>
                 <div class="w90 box-cadastrados">
                         <h1 class="w90">Cadastrados</h1>
                         <label class="w90"> recuperar data de arquivo local, e dar push no arry com novos itens, construir de manha cedo </label> 
+                        <div v-for="cards in comentarios" :key="cards.id" class="w90">
+                            <Cards :comentarios="cards"/>
+                        </div>
                 </div>
             </div>
             <div class="w50 painel-container">
@@ -48,20 +52,24 @@
 <script>
 import Nav from '../parts-layout/Nav.vue'
 import Footer from '../parts-layout/Footer.vue'
+import Cards from '../Cards.vue'
 import CardPokem from '../Card-Api'
 import axios from 'axios'
-
+import DbData from '../../assets/db/databaselocal'
 
 export default {
     name:'painel',
     components:{
         Nav,
         Footer,
-        CardPokem
+        CardPokem,
+        Cards
     },
     data(){
         return{
-            pokemons:[]
+            pokemons:[],
+            comentarios:DbData,
+            comentario:''
         }
     },
     created: function(){
@@ -70,6 +78,16 @@ export default {
             //console.log(res.data.results)
             this.pokemons=res.data.results
         })
+    },
+    methods:{
+        salvarnodb:function(){
+            this.comentarios.push({
+                 id: Date.now(),
+                 empresa:'teste',
+                 comentario:this.comentario,
+                 data:Date.now()
+            })
+        }
     }
 }
 </script>
