@@ -83,7 +83,7 @@ export default {
         salvarnodb:function(){
             this.comentarios.push({
                  id: Date.now(),
-                 empresa:'teste',
+                 empresa:this.comentario,
                  comentario:this.comentario,
                  data:Date.now()
             })
