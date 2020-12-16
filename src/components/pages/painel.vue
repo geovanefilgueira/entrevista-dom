@@ -16,7 +16,7 @@
                     </div>
                     <div class="flex-column w90">
                         <label>Comentario:</label>
-                        <input type="text" v-model="comentario">
+                        <input type="text" v-model="comentario" required>
                         {{comentario}}
                     </div>
                     <div class="flex-column w90">
@@ -81,12 +81,23 @@ export default {
     },
     methods:{
         salvarnodb:function(){
-            this.comentarios.push({
-                 id: Date.now(),
-                 empresa:this.comentario,
-                 comentario:this.comentario,
-                 data:Date.now()
-            })
+            if(this.comentario===""){
+                alert('Comentario vazio')
+            }
+            else{
+                try {
+                    this.comentarios.push({
+                        id: Date.now(),
+                        empresa:this.comentario,
+                        comentario:this.comentario,
+                        data:Date.now()
+                    })
+                } catch (error) {
+                    alert('Ops, algo deu errado'+error)
+                }
+                
+            }
+            
         }
     }
 }

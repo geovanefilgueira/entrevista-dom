@@ -65,8 +65,8 @@ export default {
 
 <style scoped>
     .box-login{
-        width: 50%;
-        min-height:40vh ;
+        width: 80%;
+        min-height:50vh ;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -81,7 +81,7 @@ export default {
         align-items: center;
     }
     .login-card{
-        width: 40%; 
+        width: 55%; 
         min-height: 40vh;
         border-radius: 5px;
         background: rgba(70, 70, 70, 0.164);
