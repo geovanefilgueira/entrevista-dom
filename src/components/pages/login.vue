@@ -22,7 +22,7 @@
                     </form>
                 </div>
                 <div class="box-login box-login-logo"> 
-                   <img src="../../assets/logo-don.png" alt="logo da empresa">
+                   <img src="../../assets/logo-don.svg" alt="logo da empresa" class="w90">
                     usuario é {{usuario}} e a senha é {{senha}}
                 </div>
             </div>

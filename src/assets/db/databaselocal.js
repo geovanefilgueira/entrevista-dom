@@ -15,12 +15,6 @@
              ,
              
              {   
-                 id:'3',
-                 empresa:'TLG Consultoria',
-                 comentario:'Bom, Excelente',
-                 data:'11-12-2020'
-             },
-             {   
                  id:'4',
                  empresa:'TLG Consultoria',
                  comentario:'maria falou um palavrao',
