@@ -13,7 +13,7 @@
                         <input type="text" v-model="usuario" class="w90" required>
                        
                         <strong class="w90"> Senha:</strong>
-                        <input type="text" v-model="senha" class="w90" required>
+                        <input type="password" v-model="senha" class="w90" required>
                         <div class="w90">
                             <input type="checkbox" required>
                             <label>Aceito os termos de uso</label>
@@ -23,7 +23,6 @@
                 </div>
                 <div class="box-login box-login-logo"> 
                    <img src="../../assets/logo-don.svg" alt="logo da empresa" class="w90">
-                    usuario é {{usuario}} e a senha é {{senha}}
                 </div>
             </div>
             

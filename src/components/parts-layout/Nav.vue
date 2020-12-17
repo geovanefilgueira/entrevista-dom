@@ -1,7 +1,7 @@
 <template>
   <nav>
     <img alt="logo don advice, cavalo de xadrez" src="../../assets/logo-don.svg">
-    <router-link to="/">Header</router-link>
+    <router-link to="/">Home</router-link>
     <router-link to="/sobre">Sobre</router-link>
     <router-link to="/login">Login</router-link>
    

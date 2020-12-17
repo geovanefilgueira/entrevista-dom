@@ -3,40 +3,49 @@
         <Nav/>
         <div class="flex-row painel">
             <div class="w50 painel-container">
-                <div class="w90 box-cadastro">
-                    <h1 class="w90">Cadastrando itens local</h1>
-                    <label class="w90">Painel home, publico, em construção</label>
-                    <div class="flex-column w90">
-                        <label>Empresa:</label>
-                        <select>
-                            <option>Multiseg</option>
-                            <option>BHR Seguros</option>
-                            <option>TLG consultoria</option>
-                        </select>
+                <div v-if="OpenMenu" class="box-cadastro" >
+                    <div class="content-box-cadastro"><!-- TRANSFORMAR EM UM COMPONENTE -->
+                        <div class="w90">
+                            <button v-on:click="OpenBoxMenu">Cancelar</button>
+                        </div>
+                        <h1 class="w90">Cadastro de itens </h1>
+                        <label class="w90">Painel home, publico, em construção</label>
+                        <div class="flex-column w90">
+                            <label>Empresa:</label>
+                            <select>
+                                <option>Multiseg</option>
+                                <option>BHR Seguros</option>
+                                <option>TLG consultoria</option>
+                            </select>
+                        </div>
+                        <div class="flex-column w90">
+                            <label>Comentario:</label>
+                            <input type="text" v-model="comentario" required>
+                        </div>
+                        <div class="flex-column w90">
+                            <label>Enviar</label>
+                            <button v-on:click="salvarnodb">Salvar Feedback</button>
+                        </div>
                     </div>
-                    <div class="flex-column w90">
-                        <label>Comentario:</label>
-                        <input type="text" v-model="comentario" required>
-                        {{comentario}}
-                    </div>
-                    <div class="flex-column w90">
-                        <label>Enviar</label>
-                        <button v-on:click="salvarnodb">Salvar Feedback</button>
-                    </div>
+                    
                 </div>
                 <div class="w90 box-cadastrados">
-                        <h1 class="w90">Cadastrados</h1>
-                        <label class="w90"> recuperar data de arquivo local, e dar push no arry com novos itens, construir de manha cedo </label> 
-                        <div v-for="cards in comentarios" :key="cards.id" class="w90">
-                            <Cards :comentarios="cards"/>
-                        </div>
+                    <div class="flex-row w90">
+                        <h1>Cadastrados</h1>
+                        
+                        <button v-on:click="OpenBoxMenu">Cadastrar Novo</button>
+                    </div>
+                    <label class="w90"> recuperar data de arquivo local, e dar push no arry com novos itens, construir de manha cedo </label> 
+                    <div v-for="cards in comentarios" :key="cards.id" class="w90">
+                        <Cards :comentarios="cards"/>
+                    </div>
                 </div>
             </div>
             <div class="w50 painel-container">
                 <div class="w90">
                     <div class="box-info-api">
                         <h1 class="w90">Consumindo uma api</h1>
-                        Consumindo uma api externa qualquer
+                        <label>api externa qualquer com axios</label> 
                     </div>
                     <div class="box-listagem-api">
                         <div v-for="(poke,index) in pokemons" :key="index" class="w90">
@@ -69,7 +78,8 @@ export default {
         return{
             pokemons:[],
             comentarios:DbData,
-            comentario:''
+            comentario:'',
+            OpenMenu:false
         }
     },
     created: function(){
@@ -80,6 +90,14 @@ export default {
         })
     },
     methods:{
+        OpenBoxMenu:function(){
+            if(this.OpenMenu){
+                this.OpenMenu=false;
+            }
+            else{
+                this.OpenMenu=true;
+            }
+        },
         salvarnodb:function(){
             if(this.comentario===""){
                 alert('Comentario vazio')
@@ -92,6 +110,8 @@ export default {
                         comentario:this.comentario,
                         data:Date.now()
                     })
+                    alert("Comentario salvo com sucesso!")
+                    this.OpenBoxMenu()
                 } catch (error) {
                     alert('Ops, algo deu errado'+error)
                 }
@@ -115,18 +135,33 @@ export default {
     flex-direction: column;
 }
 .box-cadastro{
-    background: rgba(70, 70, 70, 0.164);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.658);
     border-radius: 5px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    height: 40vh;
+}
+.content-box-cadastro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    max-width: 480px;
+    background: #fff;
+    border-radius: 5px;
+    padding: 20px 0;
 }
 .box-cadastrados{
     widows: 100%;
-    height: 45vh;
-    background: rgba(70, 70, 70, 0.164);
+    height: 78vh;
+    background:#fff;
     display: flex;
     justify-content: flex-start;
     align-items: center;
