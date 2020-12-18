@@ -15,7 +15,7 @@ const router = new VueRouter({ // construindo um novo vuirouter
     {path: '/', component: Header},
     {path: '/login', component: Login},
     {path: '/sobre', component: Sobre},
-    {path: '/details', component: Details},
+    {path: '/details/:name', component: Details},
 
     {path: '/painel', component: Painel}// nao note a rota painal pois ela está exposta sem token, to aprendendo no vue, sei em react
     

@@ -5,10 +5,10 @@
                 <div>
                     <h3>Nome: {{this.pokemons.name}} </h3>
                 </div>
-                <router-link to="/details">
+                <router-link :to="'/details/'+parametronome" >
                     Mais Detalhes:
                 </router-link>
-
+                
             </div>
             <label >
                 {{this.pokemons.url}}
@@ -18,9 +18,18 @@
 </template>
 <script>
 export default {
+    data(){
+        return{
+            parametronome:this.pokemons.name
+        }
+    },
     props:{
         pokemons:Object
+    },
+    methods:{
+        
     }
+
 }
 </script>
 <style scoped>

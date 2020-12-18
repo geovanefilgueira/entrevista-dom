@@ -32,7 +32,6 @@
                 <div class="w90 box-cadastrados">
                     <div class="flex-row w90">
                         <h1>Cadastrados</h1>
-                        
                         <button v-on:click="OpenBoxMenu">Cadastrar Novo</button>
                     </div>
                     <label class="w90"> recuperar data de arquivo local, e dar push no arry com novos itens, construir de manha cedo </label> 
@@ -160,7 +159,7 @@ export default {
 }
 .box-cadastrados{
     widows: 100%;
-    height: 78vh;
+    height: 85vh;
     background:#fff;
     display: flex;
     justify-content: flex-start;
