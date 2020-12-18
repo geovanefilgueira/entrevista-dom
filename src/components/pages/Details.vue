@@ -8,7 +8,8 @@
                     <button v-on:click="voltarPainel">Voltar</button>
                 </div>
                 <h1>DETALHES DO POKEMON </h1>
-                <img :src="this.frontSprite" :alt="this.$route.params.name">
+                <img v-if="sucessLoadding" :src="this.frontSprite" :alt="this.$route.params.name">
+                <img v-else src="https://media.tenor.com/images/47f855960d5dc83774d7b3b428964c93/tenor.gif" alt="carregando">
                 <h3 class="">{{this.$route.params.name}}</h3>
             </div>
         </div>
@@ -28,6 +29,7 @@ export default {
             //console.log(res.data.sprites.front_default)
             this.pokemon=res.data;
             this.frontSprite=res.data.sprites.front_default
+            this.sucessLoadding=true
         })
     },
     components:{
@@ -41,7 +43,8 @@ export default {
     data(){
         return{
             pokemon:[],
-            frontSprite:String
+            frontSprite:String,
+            sucessLoadding:false
         }
     }
 }
